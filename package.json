@@ -1,0 +1,9 @@
+{
+  "name": "com.paulbichler.unity-extension-methods",
+  "version": "1.0.0",
+  "displayName": "Unity Extension Methods",
+  "description": "Some useful extension methods for Unity classes",
+  "unity": "2019.4",
+  "documentationUrl": "https://github.com/PaulBichler/unity-extension-methods",
+  "licensesUrl": "https://github.com/PaulBichler/unity-extension-methods/blob/main/LICENSE"
+}
