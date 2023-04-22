@@ -3,8 +3,22 @@ using UnityEngine;
 
 namespace UnityExtensionMethods
 {
+    /// <summary>
+    /// Extension methods for Unity's GameObject class.
+    /// </summary>
     public static class GameObjectExtensions
     {
+        /// <summary>
+        /// Determines whether a component of type T is attached to this GameObject.
+        /// </summary>
+        /// <typeparam name="T">The type of component to check for.</typeparam>
+        /// <param name="gameObject">The GameObject to check for the component.</param>
+        /// <returns>True if a component of type T is attached to this GameObject, otherwise false.</returns>
+        public static bool HasComponent<T>(this GameObject gameObject) where T : Component
+        {
+            return gameObject.TryGetComponent<T>(out _);
+        }
+        
         /// <summary>
         /// Gets or adds the specified component to this game object.
         /// If the component already exists, it's returned.

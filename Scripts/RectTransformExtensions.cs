@@ -2,6 +2,9 @@ using UnityEngine;
 
 namespace UnityExtensionMethods
 {
+    /// <summary>
+    /// Extension methods for Unity's RectTransform class.
+    /// </summary>
     public static class RectTransformExtensions
     {
         /// <summary>

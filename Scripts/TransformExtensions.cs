@@ -2,6 +2,9 @@ using UnityEngine;
 
 namespace UnityExtensionMethods
 {
+    /// <summary>
+    /// Extension methods for Unity's Transform class.
+    /// </summary>
     public static class TransformExtensions
     {
         /// <summary>
