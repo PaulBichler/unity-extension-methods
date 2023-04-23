@@ -31,8 +31,42 @@ namespace UnityExtensionMethods
         }
         
         /// <summary>
+        /// Sets the X value of this transform's position.
+        /// </summary>
+        /// <param name="transform">The transform who's position to modify.</param>
+        /// <param name="value">The new x value.</param>
+        public static void SetX(this Transform transform, float value)
+        {
+            Vector3 position = transform.position;
+            transform.position = new Vector3(value, position.y, position.z);
+        }
+        
+        /// <summary>
+        /// Sets the Y value of this transform's position.
+        /// </summary>
+        /// <param name="transform">The transform who's position to modify.</param>
+        /// <param name="value">The new y value.</param>
+        public static void SetY(this Transform transform, float value)
+        {
+            Vector3 position = transform.position;
+            transform.position = new Vector3(position.x, value, position.z);
+        }
+        
+        /// <summary>
+        /// Sets the Z value of this transform's position.
+        /// </summary>
+        /// <param name="transform">The transform who's position to modify.</param>
+        /// <param name="value">The new z value.</param>
+        public static void SetZ(this Transform transform, float value)
+        {
+            Vector3 position = transform.position;
+            transform.position = new Vector3(position.x, position.y, value);
+        }
+        
+        /// <summary>
         /// Gets all the direct children of this transform as an array. 
         /// </summary>
+        /// <param name="transform">The transform who's direct children to get.</param>
         /// <returns>Children of this transform</returns>
         public static Transform[] GetChildren(this Transform transform)
         {
@@ -44,6 +78,19 @@ namespace UnityExtensionMethods
             }
             
             return children;
+        }
+    
+        /// <summary>
+        /// Adds an array of child transforms to the specified parent transform.
+        /// </summary>
+        /// <param name="transform">The parent transform to add the child transforms to.</param>
+        /// <param name="transformsToAdd">The array of child transforms to add.</param>
+        public static void AddChildren(this Transform transform, Transform[] transformsToAdd)
+        {
+            foreach (var transformToAdd in transformsToAdd)
+            {
+                transformToAdd.SetParent(transform);
+            }
         }
     }
 }

@@ -23,7 +23,7 @@ namespace UnityExtensionMethods
         /// </summary>
         /// <typeparam name="T">The type of component to add.</typeparam>
         /// <param name="component">The component who's GameObject to add the new component to.</param>
-        /// <returns></returns>
+        /// <returns>The added component.</returns>
         public static T AddComponent<T>(this Component component) where T : Component
         {
             return component.gameObject.AddComponent<T>();

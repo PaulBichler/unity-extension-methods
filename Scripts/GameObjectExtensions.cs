@@ -10,6 +10,7 @@ namespace UnityExtensionMethods
     {
         /// <summary>
         /// Determines whether a component of type T is attached to this GameObject.
+        /// If you require a reference to the component, use TryGetComponent instead.
         /// </summary>
         /// <typeparam name="T">The type of component to check for.</typeparam>
         /// <param name="gameObject">The GameObject to check for the component.</param>
