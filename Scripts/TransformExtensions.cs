@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityExtensionMethods
@@ -92,5 +93,31 @@ namespace UnityExtensionMethods
                 transformToAdd.SetParent(transform);
             }
         }
+        
+        /// <summary>
+        /// Returns the Transform in the array of Transforms that is closest to this Transform.
+        /// If multiple Transforms have the same distance to this Transform, the first one is returned.
+        /// </summary>
+        /// <param name="transform">This Transform.</param>
+        /// <param name="transforms">The array of Transforms to search.</param>
+        /// <returns>The closest Transform in the array.</returns>
+        public static Transform FindClosest(this Transform transform, IEnumerable<Transform> transforms)
+        {
+            Transform closest = null;
+            float closestDistance = Mathf.Infinity;
+
+            foreach (Transform t in transforms)
+            {
+                float distance = Vector3.Distance(transform.position, t.position);
+                if (distance < closestDistance)
+                {
+                    closestDistance = distance;
+                    closest = t;
+                }
+            }
+
+            return closest;
+        }
+
     }
 }
