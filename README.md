@@ -49,6 +49,24 @@ Extension methods for Unity's MonoBehaviour class.
 | `monoBehaviour.ExecuteInSecondsRealtime(float delay, Action callback)` | Invokes the specified callback after the specified amount of unscaled time. This method starts a coroutine on this MonoBehaviour. | `void` |
 | `monoBehaviour.ExecuteNextFrame(Action callback)`                      | Invokes the specified callback on the next frame. This method starts a coroutine on this MonoBehaviour.                           | `void` |
 
+### Rigidbody Extensions
+Extension methods for Unity's Rigidbody class.
+
+| Method                                                       | Description                                                                       | Return |
+|--------------------------------------------------------------|-----------------------------------------------------------------------------------|--------|
+| `rigidbody.Stop()`                                           | Stops the Rigidbody by setting its velocity and angular velocity to zero.         | `void` |
+| `rigidbody.SetDirection(Vector3 direction)`                  | Sets the direction of the Rigidbody's velocity vector without changing its speed. | `void` |
+| `rigidbody.MoveTowards(Vector3 targetPosition, float speed)` | Moves the Rigidbody towards the target position with a given speed.               | `void` |
+
+### Rigidbody2D Extensions
+Extension methods for Unity's Rigidbody2D class.
+
+| Method                                                         | Description                                                                         | Return |
+|----------------------------------------------------------------|-------------------------------------------------------------------------------------|--------|
+| `rigidbody2d.Stop()`                                           | Stops the Rigidbody2D by setting its velocity and angular velocity to zero.         | `void` |
+| `rigidbody2d.SetDirection(Vector2 direction)`                  | Sets the direction of the Rigidbody2D's velocity vector without changing its speed. | `void` |
+| `rigidbody2d.MoveTowards(Vector2 targetPosition, float speed)` | Moves the Rigidbody2D towards the target position with a given speed.               | `void` |
+
 ### Color Extensions
 Extension methods for Unity's Color and Color32 structs. 
 

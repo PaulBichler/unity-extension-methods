@@ -2,6 +2,9 @@ using UnityEngine;
 
 namespace UnityExtensionMethods
 {
+    /// <summary>
+    /// Extension methods for Unity's Color and Color32 structs. 
+    /// </summary>
     public static class ColorExtensions
     {
         /// <summary>
