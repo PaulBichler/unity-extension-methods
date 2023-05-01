@@ -118,6 +118,5 @@ namespace UnityExtensionMethods
 
             return closest;
         }
-
     }
 }

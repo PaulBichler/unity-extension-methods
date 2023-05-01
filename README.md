@@ -67,8 +67,15 @@ Extension methods for Unity's Rigidbody2D class.
 | `rigidbody2d.SetDirection(Vector2 direction)`                  | Sets the direction of the Rigidbody2D's velocity vector without changing its speed. | `void` |
 | `rigidbody2d.MoveTowards(Vector2 targetPosition, float speed)` | Moves the Rigidbody2D towards the target position with a given speed.               | `void` |
 
+### Vector Extensions
+Extension methods for Unity's Vector2 and Vector3 structs.
+
+| Method                                                                                                      | Description                                                                                                                                                 | Return                |
+|-------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------|
+| `vector2.FindClosest(IEnumerable<Vector2> positions)` `vector3.FindClosest(IEnumerable<Vector3> positions)` | Returns the closest position in the array of positions. If multiple positions have the same distance to this vector2 or vector3, the first one is returned. | `Vector2?` `Vector3?` |
+
 ### Color Extensions
-Extension methods for Unity's Color and Color32 structs. 
+Extension methods for Unity's Color and Color32 structs.
 
 | Method          | Description                                                                | Return   |
 |-----------------|----------------------------------------------------------------------------|----------|
