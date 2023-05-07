@@ -9,8 +9,18 @@ namespace UnityExtensionMethods
     public static class GameObjectExtensions
     {
         /// <summary>
+        /// Creates a copy of this GameObject by instantiating it.
+        /// </summary>
+        /// <param name="gameObject">The GameObject to be cloned.</param>
+        /// <returns>A new instance of the GameObject.</returns>
+        public static GameObject Clone(this GameObject gameObject)
+        {
+            return Object.Instantiate(gameObject);
+        }
+        
+        /// <summary>
         /// Determines whether a component of type T is attached to this GameObject.
-        /// If you require a reference to the component, use TryGetComponent instead.
+        /// If you require a reference to the component, use TryGetComponent instead!
         /// </summary>
         /// <typeparam name="T">The type of component to check for.</typeparam>
         /// <param name="gameObject">The GameObject to check for the component.</param>
@@ -82,6 +92,17 @@ namespace UnityExtensionMethods
             {
                 child.gameObject.SetLayerRecursively(layer);
             }
+        }
+        
+        /// <summary>
+        /// Gets the full path of this GameObject in the scene hierarchy.
+        /// </summary>
+        /// <param name="gameObject">The GameObject whose path is being requested.</param>
+        /// <param name="delimiter">The delimiter used to separate the names of each parent and child in the path.</param>
+        /// <returns>The full path of the GameObject in the scene hierarchy.</returns>
+        public static string GetPath(this GameObject gameObject, string delimiter = "/")
+        {
+            return gameObject.transform.GetPath(delimiter);
         }
     }
 }

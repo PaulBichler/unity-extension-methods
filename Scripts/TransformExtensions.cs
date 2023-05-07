@@ -1,5 +1,7 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
+using Object = UnityEngine.Object;
 
 namespace UnityExtensionMethods
 {
@@ -117,6 +119,43 @@ namespace UnityExtensionMethods
             }
 
             return closest;
+        }
+        
+        /// <summary>
+        /// Destroy all child GameObjects of a Transform.
+        /// </summary>
+        /// <param name="transform">The Transform whose child GameObjects are being destroyed.</param>
+        /// <param name="whereCondition">An optional predicate used to filter which child GameObjects are destroyed.</param>
+        /// <returns>The number of child GameObjects that were destroyed.</returns>
+        public static int DestroyAllChildren(this Transform transform, Predicate<Transform> whereCondition = null)
+        {
+            int childDestroyCount = 0;
+            
+            foreach (Transform child in transform)
+            {
+                //Don't destroy the child if the condition is not met
+                if (whereCondition != null && !whereCondition.Invoke(child)) 
+                    continue;
+                
+                Object.Destroy(child.gameObject);
+                childDestroyCount++;
+            }
+
+            return childDestroyCount;
+        }
+        
+        /// <summary>
+        /// Gets the full path of this Transform in the scene hierarchy.
+        /// </summary>
+        /// <param name="transform">The Transform whose path is being requested.</param>
+        /// <param name="delimiter">The delimiter used to separate the names of each parent and child in the path.</param>
+        /// <returns>The full path of the Transform in the scene hierarchy.</returns>
+        public static string GetPath(this Transform transform, string delimiter = "/")
+        {
+            if (!transform.parent)
+                return transform.name;
+
+            return transform.parent.GetPath(delimiter) + delimiter + transform.name;
         }
     }
 }
