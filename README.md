@@ -10,26 +10,30 @@ This package can be added to a Unity project through the [Unity Package Manager]
 ### Transform Extensions
 Extension methods for Unity's Transform class.
 
-| Method                                                     | Description                                                                                   | Return        |
-|------------------------------------------------------------|-----------------------------------------------------------------------------------------------|---------------|
-| `transform.CopyFrom(Transform other)`                      | Sets the position, rotation, and scale of this transform to match those of another transform. | `void`        |
-| `transform.Reset()`                                        | Resets the position, rotation, and scale of this transform.                                   | `void`        |
-| `transform.SetX(float value)`                              | Sets the X value of this transform's position.                                                | `void`        |
-| `transform.SetY(float value)`                              | Sets the Y value of this transform's position.                                                | `void`        |
-| `transform.SetZ(float value)`                              | Sets the Z value of this transform's position.                                                | `void`        |
-| `transform.GetChildren()`                                  | Gets all the direct children of this transform as an array.                                   | `Transform[]` |
-| `transform.AddChildren(Transform[] transformsToAdd)`       | Adds an array of child transforms to the specified parent transform.                          | `void`        |
-| `transform.FindClosest(IEnumerable<Transform> transforms)` | Returns the transform in the array of transforms that is closest to this transform.           | `Transform`   |
+| Method                                                                     | Description                                                                                   | Return        |
+|----------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------|---------------|
+| `transform.CopyFrom(Transform other)`                                      | Sets the position, rotation, and scale of this transform to match those of another transform. | `void`        |
+| `transform.Reset()`                                                        | Resets the position, rotation, and scale of this transform.                                   | `void`        |
+| `transform.SetX(float value)`                                              | Sets the X value of this transform's position.                                                | `void`        |
+| `transform.SetY(float value)`                                              | Sets the Y value of this transform's position.                                                | `void`        |
+| `transform.SetZ(float value)`                                              | Sets the Z value of this transform's position.                                                | `void`        |
+| `transform.GetChildren()`                                                  | Gets all the direct children of this transform as an array.                                   | `Transform[]` |
+| `transform.AddChildren(Transform[] transformsToAdd)`                       | Adds an array of child transforms to the specified parent transform.                          | `void`        |
+| `transform.FindClosest(IEnumerable<Transform> transforms)`                 | Returns the transform in the array of transforms that is closest to this transform.           | `Transform`   |
+| `transform.DestroyAllChildren(Predicate<Transform> whereCondition = null)` | Destroy all child GameObjects of a Transform. Returns the number of children destroyed.       | `int`         |
+| `transform.GetPath(string delimiter = "/")`                                | Gets the full path of this Transform in the scene hierarchy.                                  | `string`      |
 
 ### GameObject Extensions
 Extension methods for Unity's GameObject class.
 
-| Method                                          | Description                                                                                                                                                                        | Return    |
-|-------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------|
-| `gameObject.HasComponent<T>()`                  | Determines whether a component of type T is attached to this GameObject. If you require a reference to the component, use TryGetComponent instead.                                 | `bool`    |
-| `gameObject.GetOrAddComponent<T>()`             | Gets or adds the specified component to this game object. If the component already exists, it's returned. Otherwise, it adds a new component of the specified type and returns it. | `T`       |
-| `gameObject.GetComponentsInDirectChildren<T>()` | Gets all components of the specified type in the direct children of this game object.                                                                                              | `List<T>` |
-| `gameObject.DestroyComponent<T>()`              | Destroys the specified component attached to this game object. If multiple components of the specified type are attached, only the first one is destroyed.                         | `bool`    |
+| Method                                          | Description                                                                                                                                                                        | Return       |
+|-------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------|
+| `gameObject.Clone()`                            | Creates a copy of this GameObject by instantiating it.                                                                                                                             | `GameObject` |
+| `gameObject.HasComponent<T>()`                  | Determines whether a component of type T is attached to this GameObject. If you require a reference to the component, use TryGetComponent instead.                                 | `bool`       |
+| `gameObject.GetOrAddComponent<T>()`             | Gets or adds the specified component to this game object. If the component already exists, it's returned. Otherwise, it adds a new component of the specified type and returns it. | `T`          |
+| `gameObject.GetComponentsInDirectChildren<T>()` | Gets all components of the specified type in the direct children of this game object.                                                                                              | `List<T>`    |
+| `gameObject.DestroyComponent<T>()`              | Destroys the specified component attached to this game object. If multiple components of the specified type are attached, only the first one is destroyed.                         | `bool`       |
+| `gameObject.GetPath(string delimiter = "/")`    | Gets the full path of this GameObject in the scene hierarchy.                                                                                                                      | `string`     |
 
 ### Component Extensions
 Extension methods for Unity's Component class.
