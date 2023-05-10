@@ -84,3 +84,11 @@ Extension methods for Unity's Color and Color32 structs.
 | Method          | Description                                                                | Return   |
 |-----------------|----------------------------------------------------------------------------|----------|
 | `color.ToHex()` | Converts a Color or Color32 object to a hexadecimal string representation. | `string` |
+
+### AudioSource Extensions
+Extension methods for Unity's AudioSource class.
+
+| Method                                                                             | Description                                                                                                                                                                        | Return        |
+|------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------|
+| `audioSource.FadeIn(float duration, float targetVolume, Action onComplete = null)` | Fades in the AudioSource to the target volume over a specified duration. This is a coroutine that needs to be started by calling StartCoroutine on a MonoBehaviour.                | `IEnumerator` |
+| `audioSource.FadeOut(float duration, Action onComplete = null)`                    | Fades out the AudioSource from its current volume to silence over a specified duration. This is a coroutine that needs to be started by calling StartCoroutine on a MonoBehaviour. | `IEnumerator` |
