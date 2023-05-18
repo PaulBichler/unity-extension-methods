@@ -88,10 +88,12 @@ Extension methods for Unity's Color and Color32 structs.
 ### AudioSource Extensions
 Extension methods for Unity's AudioSource class.
 
-| Method                                                                             | Description                                                                                                                                                                        | Return        |
-|------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------|
-| `audioSource.FadeIn(float duration, float targetVolume, Action onComplete = null)` | Fades in the AudioSource to the target volume over a specified duration. This is a coroutine that needs to be started by calling StartCoroutine on a MonoBehaviour.                | `IEnumerator` |
-| `audioSource.FadeOut(float duration, Action onComplete = null)`                    | Fades out the AudioSource from its current volume to silence over a specified duration. This is a coroutine that needs to be started by calling StartCoroutine on a MonoBehaviour. | `IEnumerator` |
+| Method                                                                                  | Description                                                                                                                                                                        | Return        |
+|-----------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------|
+| `audioSource.FadeIn(float duration, float targetVolume, Action onComplete = null)`      | Fades in the AudioSource to the target volume over a specified duration. This is a coroutine that needs to be started by calling StartCoroutine on a MonoBehaviour.                | `IEnumerator` |
+| `audioSource.FadeInAsync(float duration, float targetVolume, Action onComplete = null)` | Asynchronously fades in the AudioSource to a specified target volume over a specified duration.                                                                                    | `void`        |
+| `audioSource.FadeOut(float duration, Action onComplete = null)`                         | Fades out the AudioSource from its current volume to silence over a specified duration. This is a coroutine that needs to be started by calling StartCoroutine on a MonoBehaviour. | `IEnumerator` |
+| `audioSource.FadeOutAsync(float duration, Action onComplete = null)`                    | Asynchronously fades out the volume of the AudioSource over a specified duration.                                                                                                  | `void`        |
 
 ### Camera Extensions
 Extension methods for Unity's Camera class.
