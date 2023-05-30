@@ -78,6 +78,22 @@ Extension methods for Unity's Vector2 and Vector3 structs.
 |-------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------|
 | `vector2.FindClosest(IEnumerable<Vector2> positions)` `vector3.FindClosest(IEnumerable<Vector3> positions)` | Returns the closest position in the array of positions. If multiple positions have the same distance to this vector2 or vector3, the first one is returned. | `Vector2?` `Vector3?` |
 
+### RectTransform Extensions
+Extension methods for Unity's RectTransform class.
+
+| Method                                        | Description                                                                                                                  | Return  |
+|-----------------------------------------------|------------------------------------------------------------------------------------------------------------------------------|---------|
+| `rectTransform.GetWorldRect()`                | Returns the world space bounding box of this RectTransform.                                                                  | `Rect`  |
+| `rectTransform.Contains(RectTransform other)` | Checks if the world space bounding box of this RectTransform contains the world space bounding box of another RectTransform. | `bool`  |
+| `rectTransform.GetTop()`                      | Returns the top position of the RectTransform relative to its parent.                                                        | `float` |
+| `rectTransform.GetBottom()`                   | Returns the bottom position of the RectTransform relative to its parent.                                                     | `float` |
+| `rectTransform.GetRight()`                    | Returns the right position of the RectTransform relative to its parent.                                                      | `float` |
+| `rectTransform.GetLeft()`                     | Returns the left position of the RectTransform relative to its parent.                                                       | `float` |
+| `rectTransform.SetTop(float top)`             | Sets the top position of the RectTransform relative to its parent.                                                           | `void`  |
+| `rectTransform.SetBottom(float bottom)`       | Sets the bottom position of the RectTransform relative to its parent.                                                        | `void`  |
+| `rectTransform.SetRight(float right)`         | Sets the right position of the RectTransform relative to its parent.                                                         | `void`  |
+| `rectTransform.SetLeft(float left)`           | Sets the left position of the RectTransform relative to its parent.                                                          | `void`  |
+
 ### Color Extensions
 Extension methods for Unity's Color and Color32 structs.
 

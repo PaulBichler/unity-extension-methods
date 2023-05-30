@@ -42,5 +42,85 @@ namespace UnityExtensionMethods
             Rect owr = other.GetWorldRect();
             return wr.xMin <= owr.xMin && wr.yMin <= owr.yMin && wr.xMax >= owr.xMax && wr.yMax >= owr.yMax;
         }
+        
+        /// <summary>
+        /// Returns the top position of the RectTransform relative to its parent.
+        /// </summary>
+        /// <param name="rectTransform">The RectTransform.</param>
+        /// <returns>The top position of the RectTransform.</returns>
+        public static float GetTop(this RectTransform rectTransform)
+        {
+            return -rectTransform.offsetMax.y;
+        }
+        
+        /// <summary>
+        /// Sets the top position of the RectTransform relative to its parent.
+        /// </summary>
+        /// <param name="rectTransform">The RectTransform.</param>
+        /// <param name="top">The desired top position.</param>
+        public static void SetTop(this RectTransform rectTransform, float top)
+        {
+            rectTransform.offsetMax = new Vector2(rectTransform.offsetMax.x, -top);
+        }
+        
+        /// <summary>
+        /// Returns the bottom position of the RectTransform relative to its parent.
+        /// </summary>
+        /// <param name="rectTransform">The RectTransform.</param>
+        /// <returns>The bottom position of the RectTransform.</returns>
+        public static float GetBottom(this RectTransform rectTransform)
+        {
+            return rectTransform.offsetMin.y;
+        }
+        
+        /// <summary>
+        /// Sets the bottom position of the RectTransform relative to its parent.
+        /// </summary>
+        /// <param name="rectTransform">The RectTransform.</param>
+        /// <param name="bottom">The desired bottom position.</param>
+        public static void SetBottom(this RectTransform rectTransform, float bottom)
+        {
+            rectTransform.offsetMin = new Vector2(rectTransform.offsetMin.x, bottom);
+        }
+        
+        /// <summary>
+        /// Returns the left position of the RectTransform relative to its parent.
+        /// </summary>
+        /// <param name="rectTransform">The RectTransform.</param>
+        /// <returns>The left position of the RectTransform.</returns>
+        public static float GetLeft(this RectTransform rectTransform)
+        {
+            return rectTransform.offsetMin.x;
+        }
+        
+        /// <summary>
+        /// Sets the left position of the RectTransform relative to its parent.
+        /// </summary>
+        /// <param name="rectTransform">The RectTransform.</param>
+        /// <param name="left">The desired left position.</param>
+        public static void SetLeft(this RectTransform rectTransform, float left)
+        {
+            rectTransform.offsetMin = new Vector2(left, rectTransform.offsetMin.y);
+        }
+        
+        /// <summary>
+        /// Returns the right position of the RectTransform relative to its parent.
+        /// </summary>
+        /// <param name="rectTransform">The RectTransform.</param>
+        /// <returns>The right position of the RectTransform.</returns>
+        public static float GetRight(this RectTransform rectTransform)
+        {
+            return -rectTransform.offsetMax.x;
+        }
+        
+        /// <summary>
+        /// Sets the right position of the RectTransform relative to its parent.
+        /// </summary>
+        /// <param name="rectTransform">The RectTransform.</param>
+        /// <param name="right">The desired right position.</param>
+        public static void SetRight(this RectTransform rectTransform, float right)
+        {
+            rectTransform.offsetMax = new Vector2(-right, rectTransform.offsetMax.y);
+        }
     }
 }
