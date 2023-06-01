@@ -9,6 +9,17 @@ namespace UnityExtensionMethods
     public static class CameraExtensions
     {
         /// <summary>
+        /// Retrieves the mouse ray from the camera based on the current mouse position.
+        /// (Mouse position is retrieved using 'Input.mousePosition')
+        /// </summary>
+        /// <param name="camera">The camera from which to retrieve the mouse ray.</param>
+        /// <returns>The mouse ray as a <see cref="Ray"/> object.</returns>
+        public static Ray GetMouseRay(this Camera camera)
+        {
+            return camera.ScreenPointToRay(Input.mousePosition);
+        }
+        
+        /// <summary>
         /// Shakes the camera by modifying its local position.
         /// This is a coroutine that needs to be started by calling StartCoroutine on a MonoBehaviour.
         /// </summary>

@@ -114,6 +114,7 @@ Extension methods for Unity's AudioSource class.
 ### Camera Extensions
 Extension methods for Unity's Camera class.
 
-| Method                                                          | Description                                                                                                                                                                        | Return        |
-|-----------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------|
-| `camera.Shake(float duration, float magnitude)`                 | Shakes the camera by modifying its local position. This is a coroutine that needs to be started by calling StartCoroutine on a MonoBehaviour.                                      | `IEnumerator` |
+| Method                                          | Description                                                                                                                                   | Return        |
+|-------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------|---------------|
+| `camera.GetMouseRay()`                          | Retrieves the mouse ray from the camera based on the current mouse position. (Mouse position is retrieved using 'Input.mousePosition')        | `Ray`         |
+| `camera.Shake(float duration, float magnitude)` | Shakes the camera by modifying its local position. This is a coroutine that needs to be started by calling StartCoroutine on a MonoBehaviour. | `IEnumerator` |
