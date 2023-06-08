@@ -10,18 +10,19 @@ This package can be added to a Unity project through the [Unity Package Manager]
 ### Transform Extensions
 Extension methods for Unity's Transform class.
 
-| Method                                                                     | Description                                                                                   | Return        |
-|----------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------|---------------|
-| `transform.CopyFrom(Transform other)`                                      | Sets the position, rotation, and scale of this transform to match those of another transform. | `void`        |
-| `transform.Reset()`                                                        | Resets the position, rotation, and scale of this transform.                                   | `void`        |
-| `transform.SetX(float value)`                                              | Sets the X value of this transform's position.                                                | `void`        |
-| `transform.SetY(float value)`                                              | Sets the Y value of this transform's position.                                                | `void`        |
-| `transform.SetZ(float value)`                                              | Sets the Z value of this transform's position.                                                | `void`        |
-| `transform.GetChildren()`                                                  | Gets all the direct children of this transform as an array.                                   | `Transform[]` |
-| `transform.AddChildren(Transform[] transformsToAdd)`                       | Adds an array of child transforms to the specified parent transform.                          | `void`        |
-| `transform.FindClosest(IEnumerable<Transform> transforms)`                 | Returns the transform in the array of transforms that is closest to this transform.           | `Transform`   |
-| `transform.DestroyAllChildren(Predicate<Transform> whereCondition = null)` | Destroy all child GameObjects of a Transform. Returns the number of children destroyed.       | `int`         |
-| `transform.GetPath(string delimiter = "/")`                                | Gets the full path of this Transform in the scene hierarchy.                                  | `string`      |
+| Method                                                                     | Description                                                                                         | Return        |
+|----------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------|---------------|
+| `transform.CopyFrom(Transform other)`                                      | Sets the position, rotation, and scale of this transform to match those of another transform.       | `void`        |
+| `transform.Reset()`                                                        | Resets the position, rotation, and scale of this transform.                                         | `void`        |
+| `transform.SetX(float value)`                                              | Sets the X value of this transform's position.                                                      | `void`        |
+| `transform.SetY(float value)`                                              | Sets the Y value of this transform's position.                                                      | `void`        |
+| `transform.SetZ(float value)`                                              | Sets the Z value of this transform's position.                                                      | `void`        |
+| `transform.LookAt2D(Transform target)`                                     | Makes the transform look at a 2D target object by rotating its Up-axis towards the target position. | `void`        |
+| `transform.GetChildren()`                                                  | Gets all the direct children of this transform as an array.                                         | `Transform[]` |
+| `transform.AddChildren(Transform[] transformsToAdd)`                       | Adds an array of child transforms to the specified parent transform.                                | `void`        |
+| `transform.FindClosest(IEnumerable<Transform> transforms)`                 | Returns the transform in the array of transforms that is closest to this transform.                 | `Transform`   |
+| `transform.DestroyAllChildren(Predicate<Transform> whereCondition = null)` | Destroy all child GameObjects of a Transform. Returns the number of children destroyed.             | `int`         |
+| `transform.GetPath(string delimiter = "/")`                                | Gets the full path of this Transform in the scene hierarchy.                                        | `string`      |
 
 ### GameObject Extensions
 Extension methods for Unity's GameObject class.

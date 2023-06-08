@@ -67,6 +67,17 @@ namespace UnityExtensionMethods
         }
         
         /// <summary>
+        /// Makes the transform look at a 2D target object by rotating its Up-axis towards the target position.
+        /// </summary>
+        /// <param name="transform">The transform to look at the target.</param>
+        /// <param name="target">The target transform to look at.</param>
+        public static void LookAt2D(this Transform transform, Transform target)
+        {
+            Vector2 direction = target.position - transform.position;
+            transform.rotation = Quaternion.FromToRotation(Vector3.up, direction);
+        }
+        
+        /// <summary>
         /// Gets all the direct children of this transform as an array. 
         /// </summary>
         /// <param name="transform">The transform who's direct children to get.</param>
